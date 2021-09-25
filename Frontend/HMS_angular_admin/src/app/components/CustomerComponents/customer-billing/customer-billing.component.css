@@ -1,0 +1,21 @@
+p,td{
+    opacity: 1;
+     font-weight: 1000;
+     color: black;
+     text-align: center;
+}
+/* tr{
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    opacity: .2;
+} */
+th{
+    font-size: larger;
+    font-weight: bold;
+}
+#hotelroom{
+ margin: 0% 59% 0% 41%;
+ padding: 2%;
+ width: 250px;
+ z-index: 0;
+}

@@ -1,0 +1,11 @@
+
+    body{
+        background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+    }

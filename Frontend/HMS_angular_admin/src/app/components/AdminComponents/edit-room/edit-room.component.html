@@ -1,0 +1,132 @@
+<app-roomnavbar></app-roomnavbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Rooms</h3>
+</div>
+<body>
+<style>
+    body{
+        background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+    }
+    </style>
+<div class="container">
+    <br><br>
+    <h3 align="center" style="color:black;font-size: x-large ;">Edit Room details </h3>
+    <form novalidate style="margin-left: 350px;width: 420px;" [formGroup]="editRoomForm" (ngSubmit)="updateDetails()">
+        
+        <br>
+        <fieldset>
+           <div class="form-group">
+                <label>*Room Id :</label>
+                <input type="text" class="form-control" formControlName="roomId" [readonly]="roomId!=-1 ? true :false"  >
+                   
+               
+
+            </div> 
+
+            <div class="form-group">
+                <label>*Floor Number:</label>
+                <input type="text" class="form-control" formControlName="floorNumber">
+                <div class="alert alert-danger"
+                    *ngIf="editRoomForm.get('floorNumber').hasError('required') && editRoomForm.get('floorNumber').dirty">
+                    Floor Number is required
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="editRoomForm.get('floorNumber').hasError('min') && editRoomForm.get('floorNumber').dirty">
+                    Floor Number cannot be a negative value.
+                </div>
+            </div>
+
+         
+          
+      
+         
+            <div class="form-group">
+                <tr>
+                    <label>*Room Size :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>
+                      <input type="radio" formControlName="roomSize" name="roomSize" value="Single">
+                      <label>Single</label>
+                    </td>
+                
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>
+                      <input type="radio" formControlName="roomSize" name="roomSize"  value="Double">
+                      <label>Double</label>
+                    </td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <td>
+                        <input type="radio" formControlName="roomSize" name="roomSize"  value="Triple">
+                        <label>Triple</label>
+                      </td>
+                  </tr>
+                  
+                  <div class="alert alert-danger"
+                    *ngIf="editRoomForm.get('roomSize').hasError('required') && editRoomForm.get('roomSize').dirty">
+                    Room Size is required
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="col-md-13">
+
+                    <label for="roomType">*Room Type</label><br><br>
+                    <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
+                        <option selected="selected">--Select</option>
+                        <option>AC</option>
+                        <option>Normal</option>
+                        <option>Deluxe</option>
+                       
+                    </select>
+                    <div class="alert alert-danger"
+          *ngIf="editRoomForm.get('roomType').hasError('required') && editRoomForm.get('roomType').dirty">
+          Room Type is required
+      </div>
+              </div>
+              </div>
+              <div class="form-group">
+                <label>*Room Price:</label>
+                <input type="text" class="form-control" formControlName="roomPrice">
+                <div class="alert alert-danger"
+                    *ngIf="editRoomForm.get('roomPrice').hasError('required') && editRoomForm.get('roomPrice').dirty">
+                    Room Price is required
+                </div>
+                <div class="alert alert-danger"
+                    *ngIf="editRoomForm.get('roomPrice').hasError('min') && editRoomForm.get('roomPrice').dirty">
+                   Room Price should be appropriate value.
+                </div>
+            </div>  
+            <div class="form-group">
+            <div class="col-md-13">
+
+                <label for="roomView">*Room View</label><br><br>
+                <select class="form-control form-control-lg"   name="roomView" formControlName="roomView" ngModel required>
+                    <option selected="selected">--Select</option>
+                    <option>Balcony View</option>
+                    <option>Garden View</option>
+                    <option>Sea shore View</option>
+                    <option>No View</option>
+                   
+                </select>
+                <div class="alert alert-danger"
+          *ngIf="editRoomForm.get('roomView').hasError('required') && editRoomForm.get('roomView').dirty">
+          Room Type is required
+      </div>
+          </div>
+          </div>
+            </fieldset>
+    
+    <br>
+           
+        
+            <button type="submit" class="btn btn-primary" [disabled] ="editRoomForm.invalid">Edit</button>&nbsp;&nbsp;
+            <button class="btn btn-success" type="reset">Reset</button>&nbsp;&nbsp;
+             <button  class="btn btn-danger" (click)="return()">Back</button>
+   </form>   
+</div>
+</body>

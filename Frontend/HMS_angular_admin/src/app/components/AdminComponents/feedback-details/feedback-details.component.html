@@ -1,0 +1,59 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="bradcam_area breadcam_bg">
+    <h3>Feedback</h3>
+  
+</div>
+<body>
+<style>
+    body{
+        background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+    }
+    </style>
+<h2 style="text-align: center;">Feedback Details..</h2>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8" style="    margin-top: 29px;">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Customer Name</th>
+
+                    <th scope="col">Mobile No.</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Message</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let feed of feedbacks">
+                    <!-- <th scope="row">{{feed.feedbackId}}</th> -->
+                    <td>{{feed.feedbackId}}</td>
+                    <td>{{feed.username}}</td>
+                    <td>{{feed.customerName}}</td>
+                    <td>{{feed.phoneNumber}}</td>
+                    <td>{{feed.rating}}</td>
+                    <td>{{feed.suggestion}}</td>
+                    <button type="button" class="btn btn-danger"
+                        (click)="deleteFeedback(feed.feedbackId)">Delete</button>
+                </tr>
+
+
+            </tbody>
+
+        </table>
+    </div>
+    <div class="col-sm-2"></div>
+
+</div>
+</body>
+<app-footer></app-footer>

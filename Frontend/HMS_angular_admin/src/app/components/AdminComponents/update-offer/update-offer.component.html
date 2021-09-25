@@ -1,0 +1,145 @@
+<app-offernavbar></app-offernavbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Offers</h3>
+</div>
+<body>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+            background-position: center;
+            background-size: cover;
+        }
+        
+        label{
+        color:brown;
+        font-size: large;
+        font-weight: 600;
+    }
+    </style>
+    <br><br><br>
+<div class="reglist">
+    <form novalidate [formGroup]="addOfferForm" style="margin-left: 550px;width: 420px;" (ngSubmit)="updateOffer()">
+  <fieldset>
+    <div class="form-group">
+        <label>*Offer Id:</label>
+        <input type="number" class="form-control" formControlName="offerId" readonly>
+    </div><br>
+
+    <div class="form-group">
+        <div class="col-md-13">
+            <label for="roomType">*Room Type</label>
+            <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
+                <option selected="selected">--Select---</option>
+                <option>AC</option>
+                <option>Normal</option>
+                <option>Deluxe</option>
+               
+            </select>
+            <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('roomType').hasError('required') && addOfferForm.get('roomType').dirty">
+                 Room Type is required
+            </div>
+      </div>
+      </div><br>
+      <div class="form-group">
+        <tr>
+            <label>*Room Size :</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+              <input type="radio" formControlName="roomSize" name="roomSize" value="Single">
+              <label style="color:black;">Single</label>
+            </td>
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+              <input type="radio" formControlName="roomSize" name="roomSize"  value="Double">
+              <label  style="color:black;">Double</label>
+            </td>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+                <input type="radio" formControlName="roomSize" name="roomSize"  value="Triple">
+                <label  style="color:black;">Triple</label>
+              </td>
+          </tr>
+          <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('roomSize').hasError('required') && addOfferForm.get('roomSize').dirty">
+            Room Size is required
+        </div>
+        </div>
+      <div class="form-group">
+        <label>*Offer Name:</label>
+        <input type="text" class="form-control" formControlName="offerName">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerName').hasError('required') && addOfferForm.get('offerName').dirty">
+            Offer Name is required
+        </div>
+    </div><br>
+    <div class="form-group">
+        <label>*From Date:</label>
+        <input type="date" class="form-control" formControlName="offerFromDate">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerFromDate').hasError('required') && addOfferForm.get('offerFromDate').dirty">
+            Offer From Date is required
+        </div>
+    </div><br>
+   
+   <div class="form-group">
+        <label>*To Date:</label>
+        <input type="date" class="form-control" formControlName="offerToDate">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerToDate').hasError('required') && addOfferForm.get('offerToDate').dirty">
+            Offer To Date is required
+        </div>
+    </div><br>
+
+    <div class="form-group">
+        <div class="col-md-13">
+
+            <label for="offerDetails">*Offer Details</label>
+            <select class="form-control form-control-lg"   name="offerDetails" formControlName="offerDetails" ngModel required>
+                <option selected="selected">--Select---</option>
+                <option>LateNightDrinksFree</option>
+                <option>BreakfastFree</option>
+                <option>EveningDessertFree</option>
+            </select>
+            <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('offerDetails').hasError('required') && addOfferForm.get('offerDetails').dirty">
+               Offer Details is required
+            </div>
+      </div>
+      </div><br>
+
+      <div class="form-group">
+        <label>*Discount Percentage:</label>
+        <input type="text" class="form-control" formControlName="discountPercentage">
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('discountPercentage').hasError('required') && addOfferForm.get('discountPercentage').dirty">
+             Discount Percentage is required
+        </div>
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('discountPercentage').hasError('min') && addOfferForm.get('discountPercentage').dirty">
+             Discount Percentage sholud be greater than 0
+        </div>
+    </div><br><br>
+
+    <div class="form-group">
+        
+        <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp; This offer will be shown to all customers <br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp;while adding a room and check this to make   <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sure your details are correct about offer</label><br>
+        <div class="alert alert-danger"
+            *ngIf="addOfferForm.get('termsAndConditions').hasError('required') && addOfferForm.get('termsAndConditions').dirty">
+              Terms And Conditions is required
+            </div>
+      </div><br><br>
+      
+      <div>
+        <h4><font color=red style="font-size: large;">{{errorMessage}}</font></h4><br>
+    </div>
+    <td>
+        <button type="submit" class="btn btn-primary" [disabled] ="addOfferForm.invalid">Update Offer</button>&nbsp;&nbsp;<button class="btn btn-success" type="reset">Reset</button>
+    </td>
+    <br><br>
+    </fieldset>
+    </form>
+   
+  
+</div>
+</body>

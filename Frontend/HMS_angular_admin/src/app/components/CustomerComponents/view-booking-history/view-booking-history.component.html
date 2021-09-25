@@ -1,0 +1,63 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="bradcam_area breadcam_bg">
+    <h3><b style="color:white">Booking History</b></h3>
+    <br>
+    <div class="ok">
+        <div class="row">
+            <div class="col-sm-4" align="center" *ngFor="let booking of bookings">
+                <div class="card text-white" style="background-color: rgba(0, 0, 0, 0.445);">
+                    <div class="card-body">
+                        <h3 class="card-title" style="color: #1f6feb; font-size:38px;" align="center"><b>Booking
+                                Details</b></h3>
+                        <hr>
+                        <div>
+                            <p class="card-text">
+                                <!-- Appointment Token : {{appointment.appointmentToken}}  </p>   -->
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">
+                                Customer Booking ID :
+                                {{booking.bookingId}}
+                            </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">
+                                Customer UserName :
+                                {{booking.customerUserName}}
+                            </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Email :
+                                {{booking.email}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">ID Proof :
+                                {{booking.idProof}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Room Type :
+                                {{booking.roomType}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Number Of Room
+                                :
+                                {{booking.numberOfRooms}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Room Size :
+                                {{booking.roomSize}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Room Number :
+                                {{booking.roomNumber}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Breakfast :
+                                {{booking.breakfast}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">Drinks :
+                                {{booking.drinks}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">CheckInDate :
+                                {{booking.checkInDate}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">CheckOutDate :
+                                {{booking.checkOutDate}} </p>
+                            <p class="card-text" style="color: white; font-size:20px; font-weight: bold;">PickupAndDrop
+                                : {{booking.pickupAndDrop}} </p>
+                            <hr>
+                            <p style="color: white; font-size:25px; font-weight: bold;">Booking Status</p>
+                            <button type="submit" class="btn btn-info btn-lg"
+                                disabled>{{booking.bookingStatus}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-3">
+            <button class="btn btn-dark btn-lg" (click)="Back()">Back</button>
+        </div>
+        <br>
+    </div>
+</div>
+
+<app-customer-footer></app-customer-footer>

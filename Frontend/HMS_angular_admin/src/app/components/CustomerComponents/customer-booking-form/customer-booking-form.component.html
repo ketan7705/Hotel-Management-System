@@ -1,0 +1,169 @@
+<app-customer-navbar></app-customer-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+  <h3 style="color: rgb(240, 236, 11);"><b>Customer Booking Form</b></h3>
+
+  <!-- <div class="card">
+      <div class="card-body" align="center"> -->
+
+  <div class="main" align="center">
+    <br>
+    <div class="container">
+      <form novalidate [formGroup]="bookingForm" (ngSubmit)="sendbookingForm()">
+        <fieldset>
+
+          <div class="form-group">
+          <br>
+            <label><h4><b style="color:white">Customer User Name : </b></h4></label>
+              <input type="text" class="form-control" formControlName="customerUserName" readonly placeholder="Enter Customer User Name">
+                <div  *ngIf="bookingForm?.get('customerUserName')?.hasError('required') && bookingForm.get('customerUserName')?.dirty">
+                  <b><font color = "red">Customer User Name is Required</font></b> 
+                </div>
+          <br>
+
+          <div class="form-group">
+            <br>
+              <label><h4><b style="color:white">Customer Name : </b></h4></label>
+               <input type="text" class="form-control" formControlName="customerName" placeholder="Enter Customer User Name">
+                 <div *ngIf="bookingForm?.get('customerName')?.hasError('required') && bookingForm.get('customerName')?.dirty">
+                  <b><font color = "red">Customer Name is Required</font></b> 
+                 </div>
+            <br>
+          </div>
+              
+
+            <div class="form-group">
+              <label for="roomType" class="mr-sm-2"><h4><b style="color:white">Id Proof : </b></h4></label>
+               <p style="color:white">Select your Id Proof</p>
+               <div id="hotelroom">
+                  <select class="form-control" formControlName="idProof" id="Roombooking" style="padding-left: 100px;">
+                    <option value="">--select--</option>
+                    <option>Aadhar Card</option>
+                    <option>Pan Card</option>
+                    <option>Voter Id</option>
+                    <option>Passport</option>
+                  </select>
+                </div>
+                  <br><br>
+              <input type="text" class="form-control" formControlName="idProof" placeholder="Enter your Id Number">
+              <div *ngIf="bookingForm?.get('idProof')?.hasError('required') && bookingForm.get('idProof')?.dirty">
+                <b><font color = "red">Id is Required</font></b> 
+              </div>
+            </div><br>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Email :</b></h4></label>
+             <input type="email" class="form-control" formControlName="email" placeholder="Enter your Email">
+              <div  *ngIf="bookingForm.get('email')?.hasError('required') && bookingForm.get('email')?.dirty">
+                <b><font color = "red">Email is Required</font></b> 
+              </div>
+          </div><br>
+
+          
+          <div class="form-group">
+            <label><h4><b style="color:white">Phone Number :</b></h4></label>
+            <input type="email" class="form-control" formControlName="customerMobileno" placeholder="Enter your Phone Number">
+            <div *ngIf="bookingForm.get('customerMobileno')?.hasError('required') && bookingForm.get('customerMobileno')?.dirty">
+              <b><font color = "red">Phone Number is Required</font></b> 
+            </div>
+          </div><br>
+
+          <div class="form-group">
+
+            <label for="roomType" class="mr-sm-2"><h4><b style="color:white">Room Type : </b></h4></label>&nbsp;&nbsp;
+             
+            <input type="radio" name="roomSize" id="Semi_Delux" value="Semi_Delux" formControlName="roomType"required />
+              <span style="color:white" > &nbsp;Semi Delux</span> &nbsp;&nbsp;
+            
+              <input type="radio" name="roomSize" id="Delux" value="Delux" formControlName="roomType" required />
+              <span style="color:white" >&nbsp;Delux</span>&nbsp;&nbsp;
+
+              <input type="radio" name="roomSize" id="Luxary" value="Luxary" formControlName="roomType" required />
+              <span style="color:white" > &nbsp;Luxary</span>&nbsp;&nbsp;
+              
+              <input type="radio" name="roomSize" id="Presedential_suite" value="Presedential_suite" formControlName="roomType" required />
+              <span style="color:white" >&nbsp;Presedential suite</span>&nbsp;&nbsp;
+              
+          </div><br>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Number Of Room :</b></h4></label>
+              <input type="number" class="form-control" formControlName="numberOfRooms" placeholder="Enter number of Room you Need">
+                <div *ngIf="bookingForm.get('numberOfRooms')?.hasError('required') && bookingForm.get('numberOfRooms')?.dirty">
+                  <b><font color = "red">Number Of Room is Required</font></b> 
+                </div>
+          </div><br>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Number of Members :</b></h4></label>
+            <input type="number" class="form-control" formControlName="numberOfMembers" placeholder="Enter number Of Members">
+            <div *ngIf="bookingForm.get('numberOfMembers')?.hasError('required') && bookingForm.get('numberOfMembers')?.dirty">
+              <b><font color = "red">Number of Members : is Required</font></b>
+            </div>
+          </div><br>
+         
+          <div class="form-group">
+
+            <label for="roomSize" class="mr-sm-2"><h4><b style="color:white">Room Size : </b></h4></label>&nbsp;&nbsp;
+             
+            <input type="radio" name="roomSize" id="Single_Bed" value="Single_Bed" formControlName="roomSize"required />
+              <span style="color:white" >&nbsp;Single Bed</span> &nbsp;&nbsp;
+            
+              <input type="radio" name="roomSize" id="Double_Bed" value="Double_Bed" formControlName="roomSize" required />
+              <span style="color:white" >&nbsp;Double Bed</span>&nbsp;&nbsp;
+
+              <input type="radio" name="roomSize" id="Triple_Bed" value="Triple_Bed" formControlName="roomSize" required  />
+              <span style="color:white" >&nbsp;Triple Bed</span>&nbsp;&nbsp;
+
+          </div><br>
+
+          <div class="form-group">
+            <label for="breakfast" class="mr-sm-2"><h4><b style="color:white">Breakfast : </b> </h4></label>&nbsp;&nbsp;
+            <input type="radio" name="breakfast" id="yes" value="yes" formControlName="breakfast" required
+            /><span style="color:white" >&nbsp;Yes</span> &nbsp;&nbsp;
+            <input type="radio" name="breakfast" id="No" value="No" formControlName="breakfast" required />
+            <span style="color:white" >&nbsp;No</span>&nbsp;&nbsp;
+          </div>
+
+          <div class="form-group">
+            <label for="drinks" class="mr-sm-2"><h4><b style="color:white">Drinks : </b></h4></label>&nbsp;&nbsp;
+            <input type="radio" name="drinks" id="yes" value="yes" formControlName="drinks" required />
+            <span style="color:white" >&nbsp;Yes</span> &nbsp;&nbsp;
+            <input type="radio" name="drinks" id="No" value="No" formControlName="drinks" required />
+            <span style="color:white" >&nbsp;No</span>&nbsp;&nbsp;
+          </div>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">Check In Date & Time :</b></h4></label>
+            <input type="datetime-local" class="form-control" formControlName="checkInDate" placeholder="Enter Check In Date & Time" required>
+          </div><br>
+
+          <div class="form-group">
+            <label><h4><b style="color:white">check Out Date & Time :</b></h4></label>
+            <input type="datetime-local" class="form-control" formControlName="checkOutDate" placeholder="Enter Check Out Date & Time" required>
+            <br>
+
+            <div class="form-group">
+              <label for="pickupandDrop" class="mr-sm-2"><h4><b style="color:white">PickUp And Drop : </b></h4></label>
+              
+              <input type="radio" name="pickUpAndDrop" id="yes" value="yes" formControlName="pickUpAndDrop" required />
+              <span style="color:white" >&nbsp;Yes</span> &nbsp;&nbsp;
+              
+              <input type="radio" name="pickUpAndDrop" id="No" value="No" formControlName="pickUpAndDrop" required />
+              <span style="color:white" >&nbsp;No</span>&nbsp;&nbsp;
+            </div><br>
+
+          </div>
+          <button type="submit" class="btn btn-primary" (click) = "next()">Next</button>&nbsp; &nbsp;
+          <button class="btn btn-dark" (click)="Back()">Cancel Form</button>
+    </div><br>
+
+    </fieldset>
+    <br>
+
+    </form>
+  </div>
+</div>
+</div>
+
+<app-customer-footer></app-customer-footer>

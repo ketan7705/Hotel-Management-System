@@ -1,0 +1,14 @@
+.buttons{
+    padding:6px 20px;
+    background-color: #1ab2ff;
+    border:none;
+    margin-left: 45%;
+    color:white;
+
+}
+
+.buttons:hover{
+    color:black;
+    border: 2px solid 1ab2ff;
+    background-color: whitesmoke;
+}

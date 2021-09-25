@@ -1,0 +1,90 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="bradcam_area breadcam_bg_1">
+    <h3 style="color: rgb(240, 236, 11);"><b>Update Pick and Drop</b></h3>
+
+    <br>
+    <form [formGroup]="PickDropForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label style="font-weight: bold; font-size: 20px; color: black;">Entre Room Id</label>
+                <input type="number" style="color:black;" formControlName="pickupDropId"
+                    class="form-control border border-primary"
+                    [ngClass]="{ 'is-invalid': submitted && f.pickupDropId.errors }">
+                <div *ngIf="submitted && f.pickupDropId.errors" class="invalid-feedback">
+                    <div *ngIf="f.pickupDropId.errors.required">Pick and Drop Id is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row" *ngIf = "display">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label style="font-weight: bold; font-size: 20px; color: black;">Transport</label>
+                <input type="text" formControlName="typeOfTransport" style="color:black;"
+                    class="form-control border border-primary"
+                    [ngClass]="{ 'is-invalid': submitted && f.typeOfTransport.errors }" />
+                <div *ngIf="submitted && f.typeOfTransport.errors" class="invalid-feedback">
+                    <div *ngIf="f.typeOfTransport.errors.required">transport is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-row" *ngIf = "display">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label style="font-weight: bold; font-size: 20px; color: black;">Time</label>
+                <input type="time" formControlName="time" style="color:black;"
+                    class="form-control border border-primary"
+                    [ngClass]="{ 'is-invalid': submitted && f.time.errors }" />
+                <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
+                    <div *ngIf="f.time.errors.required">Time is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row" *ngIf = "display">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label style="font-weight: bold; font-size: 20px; color: black;">Number of Passenger</label>
+                <input type="number" formControlName="numberOfPassenger" style="color:black;"
+                    class="form-control border border-primary"
+                    [ngClass]="{ 'is-invalid': submitted && f.numberOfPassenger.errors }" />
+                <div *ngIf="submitted && f.numberOfPassenger.errors" class="invalid-feedback">
+                    <div *ngIf="f.numberOfPassenger.errors.required">Passengers is required</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row" *ngIf = "display">
+            <div class="form-group col-md-4"></div>
+            <div class="form-group col-md-4">
+                <label style="font-weight: bold; font-size: 20px; color: black;">Location</label>
+                <input type="text" formControlName="location" style="color:black;"
+                    class="form-control border border-primary"
+                    [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+                <!-- <select formControlName="location" class="form-control form-select form-select-lg border border-primary"
+              [ngClass]="{ 'is-invalid': submitted && f.location.errors }">
+              <option value="Air">Airport</option>
+              <option value="Bus">Bus Stand</option>
+              <option value="Rail" enabled selected>Railway Station</option>
+            </select> -->
+                <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+                    <div *ngIf="f.location.errors.required">Location is required</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <br>
+            <button type="submit" class="btn btn-success" *ngIf="details" (click)="readOnly()">Save</button>
+
+        </div>
+        <br>
+        
+        
+    </form>
+    <button class="btn btn-primary" (click)="show()">Edit</button> &nbsp; &nbsp;
+    <button class="btn btn-dark" (click)="Back()">Back</button><br>
+</div>
+
+
+
+<app-customer-footer></app-customer-footer>

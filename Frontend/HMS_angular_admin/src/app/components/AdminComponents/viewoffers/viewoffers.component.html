@@ -1,0 +1,77 @@
+<app-offernavbar></app-offernavbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Offers</h3>
+</div>
+<body>
+  <style>
+    body{
+        background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+}
+</style>
+  <br><br>
+<div *ngIf="showTextBox">
+    <br><br><br>
+    <form novalidate [formGroup]="searchOfferForm" (ngSubmit)='searchOfferById()'style="margin-left: 550px;width: 420px;" >
+    
+  <div class="form-group">
+    <div class="col-md-13">
+        <label for="roomType">*Room Type</label>
+        <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" [(ngModel)]="roomType" (change)="searchOfferById()">
+            <option>AC</option>
+            <option>Normal</option>
+            <option>Deluxe</option>
+           
+        </select>
+  </div>
+  </div><br>
+  </form>
+  <br><br>
+  </div>
+
+<div>
+   <div class="reglist">
+       <table class="table table">
+            <thead>
+            <tr>
+            <th>Offer Id</th>
+            <th>Room Type</th>
+            <th>Room Size</th>
+            <th>Offer Name</th>
+            <th>Offer From Date</th>
+            <th>Offer To Date</th>
+            <th>Offer</th>
+            <th>Discount Percentage</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let o of offer; let i = index">
+            <td>{{o.offerId}}</td>
+            <td>{{o.roomType}}</td>
+            <td>{{o.roomSize}}</td>
+            <td>{{o.offerName}}</td>
+            <td>{{o.offerFromDate}}</td>
+            <td>{{o.offerToDate}}</td>
+            <td>{{o.offerDetails}}</td>
+            <td>{{o.discountPercentage}}</td>
+      
+            <td><button type="button" class="btn btn-info" (click)="editOffer(o.offerId)">Edit</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="alertConfirmation(o.offerId)">Delete</button></td>
+            </tr>
+            </tbody>
+            </table>
+            <h3 style="margin-left:500px"><font color="red"> &nbsp;&nbsp;&nbsp;{{errorMessage}}</font></h3>
+      </div>
+</div>
+<button type="button" class="btn btn-danger" (click)="refreshOffer()">View All</button>
+<br><br><br><br>
+</body>

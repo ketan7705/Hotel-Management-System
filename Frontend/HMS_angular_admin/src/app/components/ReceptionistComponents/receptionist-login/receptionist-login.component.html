@@ -1,0 +1,111 @@
+<body>
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="">Home</a></li>
+                                    
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo-img">
+                            <a href="index.html">
+                                <img src="../../assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                        <div class="book_room">
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class = "navbarbuttons" (click) = "back()">Back 
+                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                              </svg></button>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="bradcam_area breadcam_bg">
+    <h3 align="center">Receptionist</h3>
+</div>
+<div class= "body">
+   
+<title>Receptionist Login</title>
+
+<h2 align="center">Enter Login details</h2>
+<br><br>
+<span ><h6  align="center"><b>{{this.errorMessage}}</b></h6></span>
+<div class="container">
+    <form novalidate style="margin-left: 350px; width: 420px;" [formGroup]="receptionistlogin" (ngSubmit)="receptionistLogin()">
+        <table align="center" width=35%>
+        <fieldset>
+            <div class="form-group">
+                <i class="fa fa-id-card" aria-hidden="true" style="color:brown"></i>
+                &nbsp;&nbsp;
+                <label>UserId</label> 
+                <input type="number" class="form-control" formControlName="receptionistId">
+            </div>
+            <div class="form-group">
+                <i class="fa fa-key" aria-hidden="true" style="color:brown"></i>
+                &nbsp;&nbsp;
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="receptionistPassword">
+            </div>
+            <td>
+              <button type="submit" class="btn btn-success">Login</button>
+            </td>
+          <td> 
+              <button type="reset" class="btn btn-primary">Reset</button>
+          </td>
+          <td> 
+              <button type="submit" class="btn btn-dark" (click)="back()" >Back</button>
+          </td>
+          <td>
+              <a href="receptionistforgetPassword">ForgetPassword?</a>
+          </td>
+        </fieldset>
+    </table>
+    </form>
+</div> 
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
+<app-footer></app-footer>

@@ -1,0 +1,10 @@
+h1{
+    top: 50px;
+
+}
+input{
+    border: none;
+    outline: none;
+    background: none;
+    border-radius: 25px;
+}

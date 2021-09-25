@@ -1,0 +1,57 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="bradcam_area breadcam_bg_1">
+    <h3 style="color: rgb(240, 236, 11);"><b>Cancel Pickup And Drop</b></h3>
+
+    <div class="main" align="center">
+        <br>
+        <div class="container">
+            <form novalidate [formGroup]="cancelPickupAndDrop" #user="ngForm"
+                (ngSubmit)="sendCancelPickupAndDrop(user.value)">
+                <fieldset>
+                    <div class="form-group"><br>
+                        <label>
+                            <h4><b style="color:white ; font-size:25px; font-weight: bold;">Pickup And Drop Id</b></h4>
+                        </label>
+                        <input type="number" class="form-control" formControlName="pickupAndDropId"
+                            placeholder="Enter Pickup And Drop ID" ngModel>
+                        <div class="alert alert-danger" *ngIf="cancelPickupAndDrop?.get('pickupAndDropId')?.hasError('required') &&
+                         cancelPickupAndDrop.get('pickupAndDropId')?.dirty">
+                            Pickup And Drop ID is Required
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-group"><br>
+                        <label>
+                            <h4><b style="color:white; font-size:25px; font-weight: bold;">Customer User Name</b></h4>
+                        </label>
+                        <input type="text" class="form-control" formControlName="customerUserName" placeholder="Enter Customer User Name">
+                        <div class="alert alert-danger" *ngIf="cancelPickupAndDrop?.get('customerUserName')?.hasError('required') &&
+                         cancelPickupAndDrop.get('customerUserName')?.dirty">
+                            Customer User Name is Required
+                        </div>
+                        <br>
+                    </div>
+                    <div class="form-group"><br>
+                        <label>
+                            <h4><b style="color:white; font-size:25px; font-weight: bold;">Reason</b></h4>
+                        </label>
+                        <textarea type="text" id="form8" placeholder="Please enter a valid reason"
+                            class="md-textarea form-control" formControlName="reason" mdbInput></textarea>
+                        <div class="alert alert-danger" *ngIf="cancelPickupAndDrop?.get('reason')?.hasError('required') &&
+                         cancelPickupAndDrop.get('reason')?.dirty">
+                            Reason is Required
+                        </div>
+                        <br>
+                    </div>
+                </fieldset>
+            </form>
+            <button type="submit" class="btn btn-danger btn-lg"
+                (click)="sendCancelPickupAndDrop(user.value)">Submit</button>&nbsp;
+            &nbsp;
+            <button class="btn btn-dark btn-lg" (click)="Back()">Back</button>
+        </div>
+    </div>
+
+
+</div>
+<app-customer-footer></app-customer-footer>

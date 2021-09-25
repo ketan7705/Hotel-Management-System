@@ -1,0 +1,64 @@
+.buttons{
+  padding:10px 20px;
+  background-color: #1ab2ff;
+  border:none;
+  margin-left: 45%;
+  color:white;
+  
+}
+
+.navbarbuttons{
+  padding:6px 20px;
+  background-color: #1ab2ff;
+  border:none;
+  margin-left: 45%;
+  color:black;
+}
+
+.navbarbuttons:hover{
+  padding:6px 20px;
+  background-color: white;
+  border:none;
+  margin-left: 45%;
+  color:black;
+}
+
+
+
+.success{
+  color:green;
+  align-content: center;
+  margin-left: 42%;
+  font-weight: 400;
+}
+
+.roomField{
+  width: 100px;
+  height: 30px;
+}
+.error{
+  color:red;
+  align-content: center;
+  margin-left: 39%;
+  font-weight: 400;
+
+}
+
+.buttons:hover{
+  color:black;
+  border: 2px solid #1ab2ff;
+  background-color: whitesmoke;
+}
+
+.tableButtons{
+  color:white;
+  padding:5px 15px;
+  background-color: #1ab2ff;
+  border:none
+}
+
+.tableButtons:hover{
+  color:black;
+  border: 2px solid black;
+  background-color:white;
+}

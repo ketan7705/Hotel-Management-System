@@ -1,0 +1,110 @@
+<app-customer-navbar></app-customer-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+  <h3 style="color: rgb(255, 255, 255); text-shadow: 3px 3px #ffffffb4;">
+    <b style="color: rgb(146, 180, 224); text-shadow: 3px 3px #413434b4;">Your Invoice Details</b>
+  </h3>
+
+  <div class="main" align="center">
+    <br>
+    <div class="container">
+      <form novalidate [formGroup]="paymentForm" (ngSubmit)="PaymentDone()">
+        <fieldset>
+          <div class="form-group"><br>
+ 
+            <div class="table-responsive" id="htmlData">
+              <table border="5" BORDERCOLOR=white align="center" cellpadding="10" cellspacing="10"
+                class="table text-white">
+                <thead class="thead text-dark" style="background-color: lightsteelblue;opacity: .6;right: 12px;">
+                  <tr>
+                    <th style="text-align: center;">Description</th>
+                    <th style="text-align: center;">Quantity</th>
+                    <th style="text-align: center;">Cost</th>
+                  </tr>
+                </thead>
+                <tr style="color: rgba(255, 255, 255, 0);opacity: .9;">
+                  <td style="font-weight: bolder;">
+                    <p>Bill No </p>
+                    <p>User Name</p>
+                    <p>Room Bill</p>
+                    <p>Breakfast Bill</p>
+                    <p>Drinks Bill</p>
+                    <p>Food Bill </p>
+                    <p>Pickup And Drop Bill </p>
+                    <p>Total Bill</p>
+                  </td>
+                  <td>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>-100-</p>
+                    <p>-100-</p>
+                    <p>--100</p>
+                    <p>--100</p>
+                  </td>
+                  <td>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                    <p>100</p>
+                  </td>
+                </tr>
+                <tr style="color: rgba(255, 255, 255, 0);opacity: .9;">
+                  <td style="opacity: 1; font-weight: 1000;color: gray;">Total Amount</td>
+                  <td></td>
+                  <td style="opacity: 1; font-weight: 1000;color: grey;">100-</td>
+                </tr>
+
+                
+              </table> 
+              
+        
+            </div>
+
+            <br>
+            <br>
+            <div class="form-group">
+              <p style="color:white;font-size: 30px;">Payment Type</p>
+              <div class="dropdown" id="hotelroom">
+                <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+                <!-- Dropdown button -->
+
+                <select class="form-control dropdown-menu" formControlName="idProof" id="Roombooking"
+                  style="padding-left: 100px;align-items: center;">
+                  <option value="">--select--</option>
+                  <option>Credit Card</option>
+                  <option>Debit Card</option>
+                  <option>Cash</option>
+                  <option>Online Banking</option>
+                  <option>Wallet</option>
+                </select>
+                
+              </div>
+            
+              <br>
+              <br>
+            </div>
+
+            <button class="btn btn-primary" (click)="openPDF()">Download Invoice</button>&nbsp; &nbsp;&nbsp; &nbsp;
+            <button type="submit" class="btn btn-danger">Pay</button>&nbsp; &nbsp;&nbsp; &nbsp;
+            <button class="btn btn-dark" (click)="Back()">Back</button>
+
+          </div>
+
+          
+          <br>
+
+        </fieldset>
+        <br>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-customer-footer></app-customer-footer>

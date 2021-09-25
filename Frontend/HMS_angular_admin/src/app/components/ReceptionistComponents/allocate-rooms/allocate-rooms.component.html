@@ -1,0 +1,175 @@
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid p-0">
+                <div class="row align-items-center no-gutters">
+                    <div class="col-xl-5 col-lg-6">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="receptionDashboard">Dashboard</a></li>
+                                    <li><a href="cancellationPage">Cancel</a></li>
+                                    <li><a href="allocateRooms">Payment</a></li>
+                                    <li><a href="unBooked">Allocate</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2">
+                        <div class="logo-img">
+                            <a href="index.html">
+                                <img src="../../assets/img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                        <div class="book_room">
+                            <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <button class = "navbarbuttons" (click) = "logout()">Logout 
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                                  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                                </svg></button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="slider_area">
+    <div class="slider_active owl-carousel">
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Montana Resort</h3>
+                            <p>Booked Room and Payments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Life is Beautiful</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Montana Resort</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="slider_text text-center">
+                            <h3>Life is Beautiful</h3>
+                            <p>Unlock to enjoy the view of Martine</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<body>
+<div class = "container">
+<h3 align = "center">BOOKED ROOMS</h3>
+<hr>
+<br>
+<table class = "table">
+<thead style = "background-color: whitesmoke;">
+      <td>USERNAME</td>
+      <td>MEMBERS</td>
+      <td>PRICE</td>
+      <td>ROOM NUMBER</td>
+      <td>STATUS</td>
+      <td>CHECK-IN DATE</td>
+      <td>CHECK-OUT DATE</td>
+      <td>ACTIONS</td>
+      <td>ACTIONS</td>
+  </thead>
+      <tr *ngFor ="let record of bookedList" >
+          <td>
+              {{record.customerUserName}}
+          </td>
+
+          <td>
+              {{record.numberOfMembers}}
+          </td>
+          <td>
+            {{record.roomPrice}}.00
+          </td>
+          <td>
+              {{record.roomNumber}}
+          </td>
+          <td>
+            {{record.bookingStatus}}
+          </td>
+          <td>
+            {{record.checkInDate |date}}
+          </td>
+          <td>
+            {{record.checkOutDate | date}}
+          </td>
+          <td>
+             
+            <button class = "tableButtons" (click) = "updateCheckIn(record.customerUserName)">CHECK-IN</button>
+            </td>
+            <td>
+               <button class = "tableButtons" (click) = "updateCheckOut(record.customerUserName)">CHECK-OUT</button>
+           </td>
+      </tr>
+
+  </table>
+  <br>
+  <a class = "buttons" href = "receptionDashboard">DASHBOARD</a>
+  <br>
+  <br>
+  
+</div>
+</body>
+
+<app-footer></app-footer>

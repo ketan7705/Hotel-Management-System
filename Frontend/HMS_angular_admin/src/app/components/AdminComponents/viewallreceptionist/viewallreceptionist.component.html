@@ -1,0 +1,96 @@
+
+<app-receptionist-navbar></app-receptionist-navbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Receptionist</h3>
+</div>
+<body>
+<style>
+      
+    
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+}
+</style>
+
+<div *ngIf="show">
+ <br><br>
+    <button style="margin-left: 550px;width: 320px;" class="btn btn-primary" (click)="searchReceptionistId=true ">Search Receptionist</button>
+    
+    <div *ngIf="searchReceptionistId==true">
+        <form novalidate [formGroup]="receptionistForm">
+            <input type="number" style="margin-left: 550px;width: 20px;" placeholder="Enter Receptionist Id" formControlName="receptionistId" [(ngModel)]="txtValue" (keyup)="searchReceptionist()">
+            <input [(ngModel)]="receptionistId"  [ngModelOptions]="{standalone: true} " [hidden]="true">
+    
+        </form>
+    </div>
+    <br/><br/>
+        <div class="reglist">
+            <div>
+                <table class="table table-striped" >
+                  <thead>
+                    <tr>
+                   
+                        <th>Receptionist Id</th>
+                        <th>Receptionist Name</th>
+                        <th>Receptionist Phone Number</th>
+                        <th>Receptionist Age</th>
+                        <th>Receptionist Email</th>
+                        <th>Receptionist Address</th>
+                        <th>Receptionist Experience</th>
+                        <th>Receptionist salary</th>
+
+                        <th>Edit</th>
+                        
+                        <th>Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let r of receptionists">
+                        <td>
+                           {{r.receptionistId}}
+                         </td>
+                         <td>
+                             {{r.receptionistName}}
+                         </td>
+                     
+                         <td>
+                             {{r.receptionistPhoneNumber}}
+                         </td>
+                         <td>
+                            {{r.receptionistAge}}
+                        </td>
+                         <td>
+                             {{r.receptionistEmail}}
+                         </td>
+                         <td>
+                            {{r.address}}
+                        </td>
+                        <td>
+                            {{r.experience}}
+                        </td>
+                        <td>
+                            {{r.salary}}
+                        </td>
+                        <td *ngIf="receptionists!=null">
+               
+                            <button  class="btn btn-success" (click)="edit(r.receptionistId)">Edit</button>
+                        </td>
+                         <td *ngIf="receptionists!=null">
+               
+                            <button class ="btn btn-danger" (click)="alertConfirmation(r.receptionistId)">Delete</button>
+                        </td>
+                       </tr>
+                       
+                  </tbody>
+
+            
+            <!-- </div> -->
+        </table>
+        <h3 style="margin-left:500px"><font color="red"> &nbsp;&nbsp;&nbsp;{{errorMessage}}</font></h3>
+        <td>
+            <button  class="btn btn-primary" (click)="back()">Back</button>
+          </td>
+    </div>
+</div>

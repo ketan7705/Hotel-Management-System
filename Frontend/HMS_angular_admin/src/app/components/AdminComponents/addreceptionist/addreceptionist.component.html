@@ -1,0 +1,127 @@
+<app-receptionist-navbar></app-receptionist-navbar>
+<div class="bradcam_area breadcam_bg">
+    <h3> Receptionist</h3>
+</div>
+<body>
+
+
+    <style>
+      body{
+        
+          background:url("../../assets/img/receptionist/download.jpg ") ;
+          background-size: cover;
+          background-repeat: no-repeat;
+          display: flex;
+  overflow: visible;
+  width: auto;
+  height: auto;
+  white-space :normal;
+          
+      }
+      
+      label{
+      color:rgb(152, 112, 216);
+      font-size: large;
+      font-weight: 600;
+  }
+         b{
+color:brown
+  }
+  </style>
+
+<font color=green size = 5px>{{ successMessage }}</font>
+
+<div class="container">
+    <form novalidate [formGroup]="ReceptionistForm" (ngSubmit)="check()"  style="margin-left: 400px;width: 420px;">
+    
+      <fieldset>
+
+        <div class="form-group">
+            <label><b>Receptionist Name :</b></label>
+            <input type="text" class="form-control" formControlName="receptionistName" id="receptionistName" required>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistName').hasError('required') && ReceptionistForm.get('receptionistName').dirty">
+            Receptionist Name is Required
+            </div>
+                <div class="alert alert-danger"
+                    *ngIf="ReceptionistForm.get('receptionistName').hasError('minlength') && ReceptionistForm.get('receptionistName').dirty">
+                    Receptionist name must be of 5 characters
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Receptionist Phone Number :</b></label>
+            <input type="number" class="form-control" formControlName="receptionistPhoneNumber" required>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistPhoneNumber').hasError('required') && 
+              ReceptionistForm.get('receptionistPhoneNumber').dirty">
+              Receptionist  Phone is Required
+            </div>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistPhoneNumber').hasError('minlength') &&
+            ReceptionistForm.get('receptionistPhoneNumber').dirty">
+              Enter atleast 10 Numbers
+            </div>
+            <div>
+                
+                <font color=red size = 5px>{{ errphnMessage  }}</font>
+                            </div>
+        </div>
+
+        <div class="form-group">
+          <label><b>Receptionist Age :</b></label>
+          <input type="number" class="form-control" formControlName="receptionistAge" required>
+          <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistAge').hasError('required') && 
+            ReceptionistForm.get('receptionistAge').dirty">
+            Receptionist  Age is Required
+          </div>
+      </div>
+
+
+        <div class="form-group">
+            <label><b>Receptionist Email :</b></label>
+            <input type="email" class="form-control" formControlName="receptionistEmail" required>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistEmail').hasError('required') &&
+            ReceptionistForm.get('receptionistEmail').dirty">
+            Receptionist Email is Required
+          
+            </div>
+            <div>
+                
+<font color=red size = 5px>{{ errorMessage }}</font>
+            </div>
+        </div>
+
+        <div class="form-group">
+          <label><b>Receptionist Address :</b></label>
+          <input type="email" class="form-control" formControlName="address" required>
+          <div class="alert alert-danger" *ngIf="ReceptionistForm.get('address').hasError('required') &&
+          ReceptionistForm.get('address').dirty">
+          Receptionist Address is Required
+          </div>
+      </div>
+
+      <div class="form-group">
+        <label><b>Receptionist Experience :</b></label>
+        <input type="email" class="form-control" formControlName="experience" required>
+        <div class="alert alert-danger" *ngIf="ReceptionistForm.get('experience').hasError('required') &&
+        ReceptionistForm.get('experience').dirty">
+        Receptionist experience is Required
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label><b>Receptionist Salary :</b></label>
+      <input type="email" class="form-control" formControlName="salary" required>
+      <div class="alert alert-danger" *ngIf="ReceptionistForm.get('salary').hasError('required') &&
+      ReceptionistForm.get('salary').dirty">
+      Receptionist Salary is Required
+      </div>
+  </div>
+</fieldset>
+<div>
+      <button type="submit" class="btn btn-primary">Submit</button> &nbsp; &nbsp;
+      <button class="btn btn-dark" (click)="back()">Back</button>
+    </div> 
+    
+    </form>
+</div>
+
+</body>

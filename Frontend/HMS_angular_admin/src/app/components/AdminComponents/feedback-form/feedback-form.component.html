@@ -1,0 +1,64 @@
+<section id="contact">
+    <div class="section-content">
+        <h1 class="section-header">Get in <span class="content-header wow fadeIn " data-wow-delay="0.2s"
+                data-wow-duration="2s"> Touch with us</span></h1>
+        <h3>Thank you for choosing to stay with us</h3>
+    </div>
+    <div class="contact-section">
+        <div class="container">
+            <form novalidate [formGroup]="feedbackForm" (ngSubmit)="saveFeedback()">
+
+                <div class="col-md-6 form-line">
+                    <div class="form-group">
+
+                        <label for="exampleInputEmail">Username</label>
+                        <input type="text" class="form-control" placeholder=" Enter Username"
+                            formControlName="username">
+                        <div class="alert alert-danger"
+                            *ngIf="feedbackForm.get('username').hasError('required') && feedbackForm.get('username').dirty">
+                            Username is required
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputUsername">Your name</label>
+                        <input type="email" class="form-control" placeholder=" Enter Name"
+                            formControlName="customerName">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Mobile Number</label>
+                        <input type="tel" class="form-control" placeholder=" Enter 10-digit mobile no."
+                            formControlName="phoneNumber">
+                        <div class="alert alert-danger"
+                            *ngIf="feedbackForm.get('phoneNumber').hasError('minlength') || feedbackForm.get('phoneNumber').hasError('maxlength') && feedbackForm.get('phoneNumber').dirty">
+                            Mobile number must be of 10 digits
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <input type="tel" class="form-control" placeholder=" Enter rating out of 5"
+                            formControlName="rating" required>
+                        <div class="alert alert-danger"
+                            *ngIf="feedbackForm.get('rating').hasError('max') || feedbackForm.get('rating').hasError('min') && feedbackForm.get('rating').dirty">
+                            rating must be between 1 to 5
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="description"> Message</label>
+                        <textarea class="form-control" placeholder="Enter Your Message"
+                            formControlName="suggestion"></textarea>
+                    </div>
+                    <div>
+
+                        <button type="submit" class="btn btn-default submit"><i class="fa fa-paper-plane"
+                                aria-hidden="true"></i> Send Message</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>

@@ -1,0 +1,74 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="bradcam_area breadcam_bg">
+<h3>Booking History</h3>
+</div>
+
+<br/>
+<br/>
+<button (click)="searchBy='id'" class="button">Search By Id</button>&nbsp;&nbsp;&nbsp;
+<button (click)="searchBy='name'" class="button">Search By Name</button>&nbsp;&nbsp;&nbsp;
+<select   [(ngModel)]="roomType" (change)="getBookingDetailsByRoomType($event)" class="dropdown">
+<option *ngFor="let item of room" [ngValue]="item.value">{{item.viewValue}}</option>
+</select>&nbsp;&nbsp;&nbsp;
+<button (click)="searchBy='roomNumber'" class="button">Search By RoomNumber</button>&nbsp;&nbsp;&nbsp;
+
+
+<div *ngIf="searchBy=='id'"><br>
+<form novalidate [formGroup]="searchByBookingId">
+    <input type="number" placeholder="Enter Booking Id" formControlName="bookingId" size="9px" [(ngModel)]="txtValue" (keyup)="getBookingDetailsById()">
+    <input [(ngModel)]="bookingId"  [ngModelOptions]="{standalone: true} " [hidden]="true">
+    <button class="searchButtons" (click)="getBookingDetailsById()" class="button"> FILTER  </button>
+</form>
+</div>
+<div *ngIf="searchBy=='name'"><br>
+<form novalidate [formGroup]="searchByBookingName">
+    <input type="text" placeholder="Enter Customer Name" formControlName="customerUserName" [(ngModel)]="txtValue" (keyup)="getBookingDetailsByName()">
+    <input [(ngModel)]="customerUserName"  [ngModelOptions]="{standalone: true} " [hidden]="true">
+    <button class="searchButtons" (click)="getBookingDetailsByName()"class="button" > FILTER  </button>
+</form>
+</div>
+    
+    <!-- <input type="text" placeholder="Enter Room Type" formControlName="roomType"><button class="searchButtons"
+                (click)="getBookingDetailsByRoomType()"> FILTER  </button> -->
+<div *ngIf="searchBy=='roomNumber'"><br>
+<form novalidate [formGroup]="SearchByRoomNumber">
+    <input type="number" placeholder="Enter Room Number" formControlName="roomNumber" [(ngModel)]="txtValue" (keyup)="getBookingDetailsByRoomNumber()">
+    <input [(ngModel)]="roomNumber"  [ngModelOptions]="{standalone: true} " [hidden]="true">
+    <button class="searchButtons" (click)="getBookingDetailsByRoomNumber()" class="button"> FILTER  </button>
+</form>
+</div>
+<div><br>
+
+    <select   [(ngModel)]="selectedSort" class="dropdown" (change)="sortingDetails($event)" style="background-color: rgb(23, 124, 99);">
+        <option *ngFor="let item of sort" [ngValue]="item.value" class="button">{{item.viewValue}}</option>
+    </select>
+</div><br>
+
+
+
+<table class="table table-striped"  align="center" >
+<tr style="background: rgba(0, 0, 0, 0.397)">
+    
+    <th><h3>Booking Id</h3></th>&nbsp;&nbsp;&nbsp;
+    <th><h3>Customer User Name</h3></th>&nbsp;&nbsp;&nbsp;
+    <th><h3>Room Type</h3></th>&nbsp;&nbsp;&nbsp;
+    <th><h3>Room Number</h3></th>&nbsp;&nbsp;&nbsp;
+    <th><h3>Check In</h3></th>&nbsp;&nbsp;&nbsp;
+    <th><h3>Check Out</h3></th>&nbsp;&nbsp;&nbsp;
+    <th><h3>More Details</h3></th>&nbsp;&nbsp;&nbsp;
+</tr>
+<tr   *ngFor = "let bookings of bookingHistory" >
+    <td><h4>{{bookings.bookingId}}</h4></td>&nbsp;&nbsp;&nbsp;
+    <td><h4>{{bookings.customerUserName}}</h4></td>&nbsp;&nbsp;&nbsp;
+    <td><h4>{{bookings.roomType}}</h4></td>&nbsp;&nbsp;&nbsp;
+    <td><h4>{{bookings.roomNumber}}</h4></td>&nbsp;&nbsp;&nbsp;
+    <td><h4>{{bookings.checkInDate | date:"MM/dd/yy"}}</h4></td>&nbsp;&nbsp;&nbsp;
+    <td><h4>{{bookings.checkOutDate | date}}</h4></td>&nbsp;&nbsp;&nbsp;
+    <td><h6><button style="background: rgb(95, 160, 117);" (click)="viewDetails(bookings.bookingId)">View Details</button>&nbsp;</h6></td>&nbsp;&nbsp;&nbsp;
+</tr>
+
+<tr><h3 align="center">&nbsp;&nbsp;&nbsp;{{errorMessage}}</h3></tr>
+
+
+</table>
+ 

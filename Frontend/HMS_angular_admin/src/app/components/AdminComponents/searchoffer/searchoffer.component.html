@@ -1,0 +1,95 @@
+<app-offernavbar></app-offernavbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Offers</h3>
+</div>
+<body>
+<style>
+    body{
+        background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+}
+</style>
+<!--For search text box-->
+<div *ngIf="showTextBox">
+    <br><br><br>
+    <form novalidate [formGroup]="searchOfferForm" (ngSubmit)='searchOfferById()'style="margin-left: 650px;width: 420px;" >
+      <!-- 
+          <div class="form-group">
+              <label style="margin-left: 250px;width: 350px;">*Offer Id:</label>
+              <input type="text" class="form-control" formControlName="offerId"  style="margin-left: 250px;width: 350px;">
+              <div style="margin-left: 250px;width: 350px;" class="alert alert-danger"
+                  *ngIf="searchOfferForm.get('offerId').hasError('required') && searchOfferForm.get('offerId').dirty">
+                  Offer Id is required
+              </div>
+              </div>
+              <br><br>
+              <input style="margin-left: 250px;width: 350px;" type="submit" value="Search Offer" class="btn btn-info" [disabled]="searchOfferForm.invalid">
+              </form>
+              <br><br>
+              </div> -->
+              <div class="form-group">
+                <div class="col-md-13">
+                    <label for="roomType">*Room Type</label>
+                    <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
+                        <option selected="selected">--Select---</option>
+                        <option>AC</option>
+                        <option>Normal</option>
+                        <option>Deluxe</option>
+                       
+                    </select>
+                    <div class="alert alert-danger"
+                    *ngIf="searchOfferForm.get('roomType').hasError('required') && searchOfferForm.get('roomType').dirty">
+                         Room Type is required
+                    </div>
+              </div>
+              </div><br>
+              <input type="submit" style="width: 420px;" value="Search Offer" class="btn btn-info" [disabled]="searchOfferForm.invalid">
+              </form>
+              <br><br>
+              </div>
+<!--to view the record of a offer-->
+<div *ngIf="viewOffer">
+<br><br><br>
+   <div class="reglist">  
+            <table class="table table-striped">
+            <thead>
+            <tr>
+            <th>Offer Id</th>
+            <th>Room Type</th>
+            <th>Room Size</th>
+            <th>Offer Name</th>
+            <th>Offer From Date</th>
+            <th>Offer To Date</th>
+            <th>Offer</th>
+            <th>Discount Percentage</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+             <tr *ngFor="let offer of offer; let i = index">
+            <td>{{offer.offerId}}</td>
+            <td>{{offer.roomType}}</td>
+            <td>{{offer.roomSize}}</td>
+            <td>{{offer.offerName}}</td>
+            <td>{{offer.offerFromDate}}</td>
+            <td>{{offer.offerToDate}}</td>
+            <td>{{offer.offerDetails}}</td>
+            <td>{{offer.discountPercentage}}</td>
+            <td><button type="button" class="btn btn-success" (click)="editOffer(offer.offerId)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><button type="button" class="btn btn-danger" (click)="alertConfirmation(offer.offerId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;  </td>    
+            </tr>
+            </tbody>
+            </table>
+      </div><br><br><br>
+     <a href="offeroperations"><button class="btn btn-info">Back</button></a>
+</div>
+
+</body>

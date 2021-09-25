@@ -1,0 +1,124 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="bradcam_area breadcam_bg_1">
+  <h3>Pick and Drop</h3>
+
+  <br>
+
+
+  <form [formGroup]="PickDropForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-4"></div>
+      <div class="form-group col-md-4" *ngIf = "display">
+        <label style="font-weight: bold; font-size: 20px; color: black;">Booking Id</label>
+        <input type="number" style="color:black;" formControlName="pickupDropId"  
+          class="form-control border border-primary" [ngClass]="{ 'is-invalid': submitted && f.pickupDropId.errors }">
+        <div *ngIf="submitted && f.pickupDropId.errors" class="invalid-feedback">
+          <div *ngIf="f.pickupDropId.errors.required">Pick and Drop Id is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="roomType" class="mr-sm-2"><h4><b style="color:white">Transport : </b></h4></label>&nbsp;&nbsp;
+      <input type="radio" name="roomSize" id="Cab" value="Cab" formControlName="typeOfTransport"required />
+        <span style="color:white" > &nbsp;Cab </span> &nbsp;&nbsp;
+      
+        <input type="radio" name="roomSize" id="Bus" value="Bus" formControlName="typeOfTransport" required />
+        <span style="color:white" >&nbsp;Bus</span>&nbsp;&nbsp;
+
+        <input type="radio" name="roomSize" id="Ship" value="Ship" formControlName="typeOfTransport" required />
+        <span style="color:white" > &nbsp;Ship</span>&nbsp;&nbsp;
+        
+        <input type="radio" name="roomSize" id="AirPlane" value="AirPlane" formControlName="typeOfTransport" required />
+        <span style="color:white" >&nbsp;Air-Plane</span>&nbsp;&nbsp;
+
+        <input type="radio" name="roomSize" id="Other" value="Other" formControlName="typeOfTransport" required />
+        <span style="color:white" >&nbsp;Other</span>&nbsp;&nbsp;
+        
+    </div><br>
+
+    <div class="form-row">
+      <div class="form-group col-md-4"></div>
+      <div class="form-group col-md-4">
+        <label style="font-weight: bold; font-size: 20px; color: black;">Time</label>
+        <input type="time" formControlName="time" style="color:black;" class="form-control border border-primary"
+          [ngClass]="{ 'is-invalid': submitted && f.time.errors }" />
+        <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
+          <div *ngIf="f.time.errors.required">Time is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4"></div>
+      <div class="form-group col-md-4">
+        <label style="font-weight: bold; font-size: 20px; color: black;">Number of Passenger</label>
+        <input type="number" formControlName="numberOfPassenger" style="color:black;"
+          class="form-control border border-primary"
+          [ngClass]="{ 'is-invalid': submitted && f.numberOfPassenger.errors }" />
+        <div *ngIf="submitted && f.numberOfPassenger.errors" class="invalid-feedback">
+          <div *ngIf="f.numberOfPassenger.errors.required">Passengers is required</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-4"></div>
+      <div class="form-group col-md-4">
+        <label style="font-weight: bold; font-size: 20px; color: black;">Location</label>
+        <input type="text" formControlName="location" style="color:black;" class="form-control border border-primary"
+          [ngClass]="{ 'is-invalid': submitted && f.location.errors }" />
+        <!-- <select formControlName="location" class="form-control form-select form-select-lg border border-primary"
+              [ngClass]="{ 'is-invalid': submitted && f.location.errors }">
+              <option value="Air">Airport</option>
+              <option value="Bus">Bus Stand</option>
+              <option value="Rail" enabled selected>Railway Station</option>
+            </select> -->
+        <div *ngIf="submitted && f.location.errors" class="invalid-feedback">
+          <div *ngIf="f.location.errors.required">Location is required</div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div style="font-family: sans-serif; color: rgb(255, 255, 255);">
+      <button type = "submit" class="btn btn-primary btn-lg ">Next</button>&nbsp;&nbsp;
+      <button class="btn btn-danger btn-lg "  id = "button1" type="reset" (click)="onReset()">Cancel Form</button>&nbsp;&nbsp;
+      <button class="btn btn-dark btn-lg "  id = "button2" type="reset" (click)="Back()">Back</button> 
+  </div>
+
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <!-- blog post -->
+          <div class="blog-post">
+            <div>
+              <div style="width: 100%">
+
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d31092.789870683817!2d80.24521980966308!3d13.061194416529071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3a5265ffee00643b%3A0x392710ab0f3eeffd!2sCentral%20Railway%20Station%2C%20Jutkapuram%2C%20Periyamet%2C%20Chennai%2C%20Tamil%20Nadu!3m2!1d13.08343!2d80.27614799999999!4m5!1s0x3a5267b55865f117%3A0xedb11f5553e1c048!2sRevature%2C%20Workafella%20High%20Street%20%2C%20Teynampet%2012th%20floor%2C%20New%2C%20No.%20431%2C%20Anna%20Salai%2C%20Chennai%2C%20Tamil%20Nadu%20600018!3m2!1d13.0388761!2d80.2471937!5e0!3m2!1sen!2sin!4v1631795292520!5m2!1sen!2sin"
+                  width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <br>
+                <br>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d15547.783129248148!2d80.2297481703207!3d13.039123107515099!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3a5267003835520f%3A0xa92e20a86abac29e!2sBus%20Depot%20Rd%2C%20T.%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600017!3m2!1d13.033888!2d80.2298122!4m5!1s0x3a5267b55865f117%3A0xedb11f5553e1c048!2sRevature%2C%20Workafella%20High%20Street%20%2C%20Teynampet%2012th%20floor%2C%20New%2C%20No.%20431%2C%20Anna%20Salai%2C%20Chennai%2C%20Tamil%20Nadu%20600018!3m2!1d13.0388761!2d80.2471937!5e0!3m2!1sen!2sin!4v1631795888135!5m2!1sen!2sin"
+                  width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                <br>
+                <br>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d62198.169900674904!2d80.16865158635!3d13.011097881386474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x3a525e1f5da86397%3A0x21092f216ee26e47!2sChennai%20International%20Airport%20(MAA)%2C%20Grand%20Southern%20Trunk%20Road%2C%20Meenambakkam%2C%20Chennai%2C%20Tamil%20Nadu!3m2!1d12.994112!2d80.1708668!4m5!1s0x3a5267b55865f117%3A0xedb11f5553e1c048!2sRevature%2C%20Workafella%20High%20Street%20%2C%20Teynampet%2012th%20floor%2C%20New%2C%20No.%20431%2C%20Anna%20Salai%2C%20Chennai%2C%20Tamil%20Nadu%20600018!3m2!1d13.0388761!2d80.2471937!5e0!3m2!1sen!2sin!4v1631796005852!5m2!1sen!2sin"
+                  width="1000" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+
+</div>
+
+
+
+<app-customer-footer></app-customer-footer>

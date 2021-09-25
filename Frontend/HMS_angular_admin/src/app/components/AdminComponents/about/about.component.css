@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+.flybuy-address-bg-color {
+    background-color: #0d2436;
+}
+
+.flybuy-google-logo {
+    color: #5a7184;
+    background-color: #152c3e;
+    border-radius: 60px;
+    padding-top: 18px;
+    padding-left: 18px;
+    padding-right: 22px;
+    padding-bottom: 15px;
+    font-size: 22px;
+    margin: 5px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.ayurvigyan-para {
+    color: #5a7184;
+    margin-top: 5px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.gettoknow-heading {
+    color: #5a7184;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.gettoknow-para {
+    color: #5a7184;
+    list-style-type: none;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.flybuy-hr-line {
+    background-color: #5a7184;
+}
+
+.flybuy-copyrights {
+    color: #5a7184;
+    font-size: 22px;
+}
+.careerimage{
+    width: 100vh;
+    height: 60vh;
+    margin: 20px;
+}
+.careerheading{
+    padding-top: 20px;
+    font-size: 50px;
+    color: crimson;
+}
+.careerpara{
+
+        margin-top: 30px;
+       font-size: 20px;
+       color: darkslategray;
+}
+.ourhotel{
+    text-align: center;
+    font-weight: bold;
+    color:black;
+    font-size: 50px;
+}
+.ourhotelpara{
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+    font-family: 'Raleway','sans-serif';
+    color:#5a7184;
+}
+.fortune{
+    height: 80vh;
+    width: 60vh;
+    margin: 25px;
+    margin-left: 150px;
+}
+.subpoints{
+    font-size: 30px;
+    margin:10px;
+    font-family: 'Raleway','sans-serif';
+}
+.subpointsheding{
+    font-size: 50px;
+    font-family: 'Raleway','sans-serif';
+}
+.bedcard{
+    background-image: url("https://ihg.scene7.com/is/image/ihg/kimpton-hotel-overview-bed");
+    background-size: cover;
+    height: 80vh;
+    width: 60vh;
+    margin: 20px;
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Raleway','sans-serif';
+    font-family: serif;
+}
+.balconycard{
+    background-image: url("https://ihg.scene7.com/is/image/ihg/kimpton-palomar-sobe-suite-tile");
+    background-size: cover;
+    height: 80vh;
+    width: 60vh;
+    margin: 20px;
+    color: aliceblue;
+    font-family: 'Raleway','sans-serif';
+    text-align: center;
+    font-family: serif;
+}
+.workoutcard{
+    background-image: url("https://ihg.scene7.com/is/image/ihg/kimpton-hotel-overview-collage-3");
+    background-size: cover;
+    height: 80vh;
+    width: 60vh;
+    margin: 20px;
+    font-family: 'Raleway','sans-serif';
+    color: aliceblue;
+    text-align: center;
+    font-family: serif;
+}
+.forgotcard{
+    background-image: url("https://ihg.scene7.com/is/image/ihg/kimpton-hotel-overview-forgot-it");
+    background-size: cover;
+    height: 80vh;
+    width: 60vh;
+    font-family: 'Raleway','sans-serif';
+    margin: 20px;
+    color: aliceblue;
+    text-align: center;
+    font-family: serif;
+}
+.experiences{
+    margin: 10px;
+    text-align: center;
+    font-family: 'Raleway','sans-serif';
+    color: darkgrey;
+}
+.finalimage{
+    width: 220vh;
+    padding: 20px;
+}
+.lastpara{
+
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+    font-family: 'Raleway','sans-serif';
+    color:#5a7184;
+   
+}

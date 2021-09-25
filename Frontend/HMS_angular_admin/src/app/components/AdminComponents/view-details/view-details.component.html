@@ -1,0 +1,88 @@
+<app-adminnavbar></app-adminnavbar>
+<div class="bradcam_area breadcam_bg">
+
+</div>
+<h3  align="center"><img src="assets/img/user.png" margin-left="10" style= "width:250px"/></h3>
+<h4 align="center">
+    <table  align="center">
+            <tr>
+                <th>Booking Id </th><td>:</td>
+                <td>{{bookingId}}</td>
+            </tr>
+            <tr>
+                <th>Customer User Name </th><td>:</td>
+                <td>{{bookingHistory.customerUserName}}</td>
+            </tr>
+            <tr>
+                <th>Customer Name </th><td>:</td>
+                <td>{{bookingHistory.customerName}}</td>
+            </tr>
+            <tr>
+                <th>Email Id </th><td>:</td>
+                <td>{{bookingHistory.email}}</td>
+            </tr>
+            <tr>
+                <th>Id Proof</th><td>:</td>
+                <td>{{bookingHistory.idProof}}</td>
+            </tr>
+            <tr>
+                <th>Type of Room </th><td>:</td>
+                <td>{{bookingHistory.roomType}}</td>
+            </tr>
+            <tr>
+                <th>Number of Rooms </th><td>:</td>
+                <td>{{bookingHistory.numberOfRooms}}</td>
+            </tr> 
+            <tr>
+                <th>Number of Members </th><td>:</td>
+                <td>{{bookingHistory.numberOfMembers}}</td>
+            </tr>
+            <tr>
+                <th>Room Number </th><td>:</td>
+                <td>{{bookingHistory.roomNumber}}</td>
+            </tr> 
+            <tr>
+                <th>CheckInDate </th><td>:</td>
+                <td>{{bookingHistory.checkInDate | date}}</td>
+            </tr>
+            <tr>
+                <th>CheckOutDate </th><td>:</td>
+                <td>{{bookingHistory.checkOutDate | date}}</td>
+            </tr>
+            <tr>
+                <th>Room Size </th><td>:</td>
+                <td>{{bookingHistory.roomSize}}</td>
+            </tr> 
+            <tr>
+                <th>Breakfast </th><td>:</td>
+                <td>{{bookingHistory.breakfast}}</td>
+            </tr>
+            <tr>
+                <th>Drinks </th><td>:</td>
+                <td>{{bookingHistory.drinks}}</td>
+            </tr>
+            <tr>
+                <th>Pick Up and Drop facility </th><td>:</td>
+                <td>{{bookingHistory.pickupAndDrop}}</td>
+            </tr>
+            <tr>
+                <th>Cancellation </th><td>:</td>
+                <td>{{bookingHistory.cancellation}}</td>
+            </tr>
+            <tr>
+                <th>Specialization </th><td>:</td>
+                <td>{{bookingHistory.specialization}}</td>
+            </tr>
+            <tr>
+                <th>Booking Status </th><td>:</td>
+                <td>{{bookingHistory.bookingStatus}}</td>
+            </tr>
+            <tr>
+                <th>Room Price </th><td>:</td>
+                <td>{{bookingHistory.roomPrice}}</td>
+            </tr>
+        
+    </table>
+</h4>
+<h2><button style="background-color: rgb(5, 73, 5);" (click)="home()">Home</button></h2>
+<app-footer></app-footer>

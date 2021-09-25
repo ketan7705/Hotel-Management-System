@@ -1,0 +1,65 @@
+<h3 align="center"  width=35%>UPDATE YOUR PROFILE</h3>           
+<div class="container">
+        <form novalidate [formGroup]="receptionistForm" (ngSubmit)="updateMyProfile()">
+            <table align="center" width=35%>
+            <fieldset>
+               <div class="form-group">
+                    <label><b>Id</b></label>
+                    <input type="text" class="form-control" formControlName="receptionistId" [readonly]="receptionistId!=-1 ? true :false">
+                </div> 
+    
+                <div class="form-group">
+                    <label><b>Name</b></label>
+                    <input type="text" class="form-control" formControlName="receptionistName">
+                    
+                    
+                </div>
+                <div class="form-group">
+                    <label><b>Password</b></label>
+                    <input type="text" class="form-control" formControlName="receptionistPassword">
+                    
+                </div>
+
+                <div class="form-group">
+                    <label><b>Age</b></label>
+                    <input type="number" class="form-control" formControlName="receptionistAge">
+                    
+                </div>
+    
+                <div class="form-group">
+                    <label><b>MobileNo</b></label>
+                    <input type="text" class="form-control" formControlName="receptionistPhoneNumber">
+                    
+                </div>
+    
+                <div class="form-group">
+                    <label><b>Email</b></label>
+                    <input type="email" class="form-control" formControlName="receptionistEmail">  
+                </div>
+                <div class="form-group">
+                    <label><b>Address</b></label>
+                    <input type="text" class="form-control" formControlName="address">
+                    
+                </div>
+    
+                <div class="form-group">
+                    <label><b>Experience</b></label>
+                    <input type="text" class="form-control" formControlName="experience" [readonly]="experience!=null? true : false">   
+                </div>
+
+    
+                <div class="form-group">
+                    <label><b>Salary</b></label>
+                    <input type="number" class="form-control" formControlName="salary" [readonly]="salary!=-1 ? true :false">
+                    
+                </div>
+                    
+         
+            <button type="submit" class="btn btn-primary" [disabled] ="receptionistForm.invalid">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+         
+            <button  class="btn btn-primary" (click)="return()">Back</button>
+             
+        </fieldset>   
+        </table> 
+       </form>   
+   </div>

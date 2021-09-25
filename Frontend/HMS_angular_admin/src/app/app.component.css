@@ -1,0 +1,13 @@
+.body{
+    height: 850px;
+    background-image: url("/assets/background.jpeg");
+	background-repeat:no-repeat;
+    background-size: 100%;
+    background-size: cover;
+    color: blanchedalmond;  
+    }
+.label{
+color:brown;
+font-size: large;
+font-weight: 600;
+}

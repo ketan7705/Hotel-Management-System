@@ -1,0 +1,24 @@
+<app-customer-navbar></app-customer-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+  <h3 style="color: rgb(240, 236, 11);"><b>Confirm Booking</b></h3>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h2>
+  <div style="font-family: sans-serif; color: rgb(255, 255, 255);">
+    To confirm your booking You have to pay 10% Amount of your Room Booking Amount<br><br>
+
+    Amount : <input type="text"><br><br>
+    <button class="btn btn-danger" type="submit" (click)="cancel()">Cancel Booking</button>&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-success" type="submit"  (click)="paymentDone()">Pay For Confirm Booking</button>&nbsp;&nbsp;&nbsp;
+    <button class="btn btn-danger" *ngIf = "display" type="submit" (click)="final()">Submit</button><br><br>
+    <button class="btn btn-success" *ngIf = "display1"  (click)="home()">Back To the DashBoard</button>
+    
+</div>
+<font color = "white">{{message}}</font>
+  </h2>
+</div>
+
+<app-customer-footer></app-customer-footer>

@@ -1,0 +1,18 @@
+
+  .button {
+    font-style: italic;
+    color: rgb(199, 241, 199) !important;
+	text-transform: inherit;
+	text-decoration: none;
+	background: #06465f;
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+  }
+.dropdown{
+    padding: 9px;
+    background: #06465f;
+}
+

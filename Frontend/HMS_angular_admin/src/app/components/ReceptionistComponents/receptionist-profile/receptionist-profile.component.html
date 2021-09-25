@@ -1,0 +1,34 @@
+
+<h2 align="center">Receptionist Details</h2>
+     <table  class="table table-striped" style="color: rosybrown; background-color: lemonchiffon;" align="center" cellpadding="8" cellspacing="8" border="5">     
+        <tbody>
+          <tr>
+            <th>ReceptionistId</th>
+            <th>Name</th>
+            <th>Password</th>
+            <th>Age</th>
+            <th>MobileNumber</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Experience</th>
+            <th>Salary</th>
+      </tr>
+      <tr>
+        <td>{{receptionist?.receptionistId}}</td>
+        <td>{{receptionist?.receptionistName}}</td>
+        <td>{{receptionist?.receptionistPassword}}</td>
+        <td>{{receptionist?.receptionistAge}}</td>
+        <td>{{receptionist?.receptionistPhoneNumber}}</td>
+        <td>{{receptionist?.receptionistEmail}}</td>
+        <td>{{receptionist?.address}}</td>
+        <td>{{receptionist?.experience}}</td>
+        <td>{{receptionist?.salary}}</td>    
+      </tr>
+      </tbody>
+     
+      <button class="btn btn-secondary" (click)="editProfile()">Edit</button>&nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      
+      <button class="btn btn-primary" (click)="back()">Back</button>
+    </table>
+  

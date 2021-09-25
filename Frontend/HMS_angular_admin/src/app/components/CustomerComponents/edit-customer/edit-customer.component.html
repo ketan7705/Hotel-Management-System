@@ -1,0 +1,121 @@
+<app-customer-navbar></app-customer-navbar>
+<div class="bradcam_area breadcam_bg_2">
+  <h3 > <b > Edit Customer</b></h3>
+  <br> <br>
+  <div class="container">
+      <form novalidate [formGroup]="customerEditForm" (ngSubmit)="editCustomer()">
+        <fieldset>
+
+          <div class="form-group" id = "dummy"><br>
+            <label>
+              <h4><b style="color:white">Customer User Name</b></h4>
+            </label>
+            <input type="text" class="form-control"  formControlName="customerUserName" placeholder="Enter Customer Name" required>
+            <div class="alert alert-danger" *ngIf="customerEditForm?.get('customerUserName')?.hasError('required') &&
+            customerEditForm.get('customerUserName')?.dirty">
+              customer name is Required
+            </div>
+          </div>
+            
+          <div class="form-group"><br>
+            <label>
+              <h4><b style="color:white">Customer User Name</b></h4>
+            </label>
+            <input type="text" class="form-control" readonly formControlName="customerUserName" placeholder="Enter Customer Name" required>
+            <div class="alert alert-danger" *ngIf="customerEditForm?.get('customerUserName')?.hasError('required') &&
+            customerEditForm.get('customerUserName')?.dirty">
+              customer name is Required
+            </div>
+          </div>
+            
+          <div class="form-group">
+            <label ><h4 > <b style="color: white"> Customer Name</b></h4></label>  
+            <input type="text" class="form-control" formControlName="customerName" required [readonly]="readonly" >
+            <div class="alert alert-danger"
+              *ngIf="customerEditForm.get('customerName').hasError('required') && customerEditForm.get('customerName').dirty">
+              Customer Name is Required
+            </div>
+            <div class="alert alert-danger"
+              *ngIf="customerEditForm.get('customerName').hasError('minlength') && customerEditForm.get('customerName').dirty">
+              Please enter a character above 5
+            </div>
+  
+          </div>
+  
+          
+  
+          <div class="form-group">
+            <label> <h4 > <b style="color: white"> Email </b> </h4> </label>
+            <input type="email" class="form-control" formControlName="email" required [readonly]="readonly" >
+            <div class="alert alert-danger" *ngIf="customerEditForm.get('email')?.hasError('required') &&
+                       customerEditForm.get('email')?.dirty">
+              Email is Required
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label> <h4 > <b style="color: white">Mobile Number</b></h4> </label>
+            <input type="number" class="form-control" formControlName="mobileNumber" required [readonly]="readonly" >
+            <div class="alert alert-danger"
+              *ngIf="customerEditForm.get('mobileNumber')?.hasError('required') && customerEditForm.get('mobileNumber')?.dirty">
+              Phone is Required
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label> <h4 > <b style="color: white"> Age </b> </h4> </label>
+            <input type="number" class="form-control" formControlName="age" required [readonly]="readonly" >
+            <div class="alert alert-danger"
+              *ngIf="customerEditForm.get('age')?.hasError('required') && customerEditForm.get('age')?.dirty">
+              Age is Required
+            </div>
+          </div>
+          <br> <br>
+          <div class="form-group">
+            <label for="gender" class="mr-sm-2"> <h4 > <b style="color: white"> Gender : </b></h4></label> &nbsp;
+            <input type="radio" name="gender" id="male" value="male" formControlName="gender" />   <b style="color: white"> Male </b> &nbsp;
+            <input type="radio" name="gender" id="female" value="female" formControlName="gender" /> <b style="color: white"> Female </b> &nbsp;
+            <input type="radio" name="gender" id="trans" value="trans" formControlName="gender" /> <b style="color: white"> Others </b> 
+            <div *ngIf="customerEditForm.get('gender')?.hasError('required') && customerEditForm.get('gender')?.dirty"
+              class=" alert alert-danger">
+              Name is required.
+            </div>
+          </div><br>
+  
+          <div>
+            <label for="address"> <h4 > <b style="color: white"> Address </b> </h4> </label><br>
+            <select name="country" id="country" required>
+              <option value="">--Select Country--</option>
+              <option value="India">India</option>
+            </select>
+            <br> <br> <br>
+            <select id="states" required >
+              <option value ="">--Select State--</option>
+              <option value ="Andhra Pradesh">Andhra Pradesh</option>
+              
+            </select>
+            <br> <br> <br>
+            <select id="city">
+              <option value ="">--Select City--</option>
+              <option value ="Mumbai">Mumbai</option>
+            </select>
+          </div>
+          <br> <br>
+  
+          
+          <br> <br>
+      </fieldset>
+        <button type="submit" class="btn btn-success"  *ngIf="details" (click)="readOnly()">Save</button>
+
+        <br> <br>
+      </form>
+      <button class="btn btn-primary"   (click)="show()">Edit</button>	&nbsp;	&nbsp;
+      <button class="btn btn-warning"  (click)="forgetPassword()">Forget Password</button>	&nbsp;	&nbsp;
+      <!-- <button class="btn btn-warning"  (click)="forgetPassword()">Update booking</button>
+      <br>
+      <br> -->
+      <button class="btn btn-dark" (click)="Back()">Back</button><br>
+</div>
+</div>
+
+<app-customer-footer></app-customer-footer>

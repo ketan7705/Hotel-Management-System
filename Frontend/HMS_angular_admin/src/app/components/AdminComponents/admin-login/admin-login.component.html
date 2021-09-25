@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+    <h3>Admin Login</h3>
+</div>
+<!-- <font color=green size = 5px>{{ successMessage }}</font> -->
+<body>
+<font color=red size = 5px>{{ errorMessage }}</font>
+<div class="container">
+    <form novalidate [formGroup]="adminForm" (ngSubmit)="adminLogin()" style="margin-left: 400px;width: 380px;">
+      <fieldset>
+        <br><br>
+        <div class="form-group">
+            <i class="fa fa-id-card" aria-hidden="true" style="color:brown"></i>
+            &nbsp;&nbsp;
+            <label>Admin ID </label>
+            <input type="text" class="form-control" formControlName="adminId" id="adminId" required>
+            <div class="alert alert-danger" 
+                *ngIf="adminForm.get('adminId').hasError('required') && adminForm.get('adminId').dirty">
+                Admin Id is Required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <i class="fa fa-key" aria-hidden="true" style="color:brown"></i>
+            &nbsp;&nbsp;
+            <label>Password </label>
+            <input type="password" class="form-control" formControlName="adminpassword" required>
+            <div class="alert alert-danger" 
+                *ngIf="adminForm.get('adminpassword').hasError('required') && adminForm.get('adminpassword').dirty">
+                Password is Required
+            </div>
+        </div>
+
+      </fieldset>
+      <br>
+      <button type="submit" class="btn btn-primary" style="margin-left: 100px;" [disabled] ="adminForm.invalid">Submit</button> &nbsp; &nbsp;
+      <button class="btn btn-danger" type="reset">Reset</button>
+    </form>
+</div>
+<br>
+</body>
+<app-footer></app-footer>
+

@@ -1,0 +1,163 @@
+<app-roomnavbar></app-roomnavbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Rooms</h3>
+</div>
+<body>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+            background-position: center;
+            background-size: cover;
+        }
+    
+    
+        </style>
+<br><br><br>
+<span> <img src="../../assets/imagesofrooms/room1.jpg" alt="" style="width: 400px;margin-left: 60px;"
+    >
+    <img src="../../assets/imagesofrooms/room3.jpg" alt="" style="width: 400px;margin-left: 45px;"
+    >
+    <img src="../../assets/imagesofrooms/room4.jpg" alt="" style="width: 400px;margin-left: 45px;"
+    >
+</span>
+<br><br><br>
+<!-- <button class="btn btn-primary" (click)="addRoom()">Add Room</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-primary" (click)="viewRooms()">View Rooms</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-primary" (click)="searchRoom()">Search Room</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<button class="btn btn-primary" (click)="return()">Logout</button>&nbsp;&nbsp;&nbsp;&nbsp;
+<br><br> -->
+
+
+<div *ngIf="show">
+    <h2 align="center">Room Details</h2>
+    
+    <div class="reglist">
+        <div>
+            <table class="table table-striped" >
+              <thead>
+                <tr>
+                <th>Room Id</th>
+                <th> Floor Number</th>
+                <th>Room Size</th>
+                <th>Room Type</th>
+                <th>Room Price</th>
+                <th>Room View</th>
+               <th>Delete</th>
+               <th>Edit</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let r of rooms">
+               <td>
+                  {{r.roomId}}
+                </td>
+                <td>
+                    {{r.floorNumber}}
+                </td>
+                
+                <td>
+                    {{r.roomSize}}
+                </td>
+                <td>
+                    {{r.roomType}}
+                </td>
+                <td>
+                    {{r.roomPrice}}
+                </td>
+                <td>
+                    {{r.roomView}}
+                </td>
+               
+                <td>
+                   
+                    <button class="btn btn-primary" (click)="deleteRoom(r.roomId)">Delete</button>
+                </td> 
+                <td>
+                  
+                  <button class="btn btn-success" (click)="editRoom(r.roomId)">Edit</button>
+                </td> 
+                
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+          <br>
+          <button  class="btn btn-danger" (click)="return()">Back</button>
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div *ngIf="showTextBox">
+          <form style="width:400px;padding: 30px;margin-left: 430px;" 
+          novalidate [formGroup]="searchRoomForm" (ngSubmit)='searchRoomById()' >
+            
+                <div class="form-group">
+                    <label>*Room Id:</label>
+                    <input type="text" class="form-control" formControlName="roomId">
+                    <div class="alert alert-danger"
+                        *ngIf="searchRoomForm.get('roomId').hasError('required') && searchRoomForm.get('roomId').dirty">
+                        Room Id is required
+                    </div>
+                    </div>
+                    <br><br>
+                    <input style="margin-left: 150px;" type="submit" value="Search Room" class="btn btn-info" [disabled]="searchRoomForm.invalid">
+                    </form>
+                    <br><br>
+                    <button  class="btn btn-danger" (click)="return()">Back</button>
+                    </div>
+
+
+
+
+
+                    <div *ngIf="viewRoom">
+                      
+                        <h2>Room Details for which you search:)</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                         <th>Room Id</th> 
+                            <th>Floor Number </th>
+                            <th>Room Size</th>
+                            <th>Room Type</th>
+                            <th>Room Price </th>
+                            <th>Room View </th>
+                            
+                            </tr></thead>
+                
+                            <tbody>
+                                <tr>
+                                   <td>{{room.roomId}}</td>
+                                    <td>{{room.floorNumber}}</td>
+                                    <td>{{room.roomSize}}</td>
+                                    <td>{{room.roomType}}</td>
+                                    <td>{{room.roomPrice}}</td>
+                                    <td>{{room.roomView}}</td>
+                                   
+                                    <td>
+                                   
+                
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="btn btn-primary" (click)="deleteRoom(room.roomId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button class="btn btn-info" (click)="editRoom(room.roomId)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <button  class="btn btn-danger" (click)="return()">Back</button>
+                    </div>
+   </body>
+    <app-footer></app-footer>                    

@@ -1,0 +1,152 @@
+<app-receptionist-navbar></app-receptionist-navbar>
+<div class="bradcam_area breadcam_bg">
+    <h3> Receptionist</h3>
+</div>
+
+<body>
+    <style>
+        body{
+            background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+            background-position: center;
+            background-size: cover;
+        }
+    
+    
+        </style>
+<br><br><br>
+<span> <img src="../../assets/img/receptionist/rec1.jpg" alt="" style="width: 400px;margin-left: 60px;"
+    >
+    <img src="../../assets/img/receptionist/rec2.jpg" alt="" style="width: 460px;margin-left: 45px;"
+    >
+    <img style="width: 400px;margin-left: 30px;" src="../../assets/img/offers/recp.jpg" alt="">
+</span>
+<br><br><br>
+<div *ngIf="show">
+    <h2 align="center"> Receptionist Details</h2>
+ 
+        <div class="reglist">
+            <div>
+                <table class="table table-striped" >
+                  <thead>
+                    <tr>
+                   
+                        <th>Receptionist Id</th>
+                        <th>Receptionist Name</th>
+                        <th>Receptionist Phone Number</th>
+                        <th>Receptionist Age</th>
+                        <th>Receptionist Email</th>
+                        <th>Receptionist Address</th>
+                        <th>Receptionist Experience</th>
+                        <th>Receptionist salary</th>
+
+                        <th></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  
+                    <tr *ngFor="let r of receptionists">
+                        <td>
+                           {{r.receptionistId}}
+                         </td>
+                         <td>
+                             {{r.receptionistName}}
+                         </td>
+                     
+                         <td>
+                             {{r.receptionistPhoneNumber}}
+                         </td>
+                         <td>
+                            {{r.receptionistAge}}
+                        </td>
+                         <td>
+                             {{r.receptionistEmail}}
+                         </td>
+                         <td>
+                            {{r.address}}
+                        </td>
+                        <td>
+                            {{r.experience}}
+                        </td>
+                        <td>
+                            {{r.salary}}
+                        </td>
+                        <td>
+               
+                            <button class ="btn btn-primary" (click)="edit(r.receptionistId)">Edit</button>
+                        </td>
+                         <td>
+               
+                            <button class ="btn btn-danger" (click)="delete(r.receptionistId)">Delete</button>
+                        </td>
+                       </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+              <br>
+              <button  class="btn btn-primary" >Back</button>
+            </div>
+
+            <div *ngIf="showrec">
+                <form style="width:300px;padding: 30px;margin-left: 620px;"
+                novalidate [formGroup]="receptionistForm" (ngSubmit)="viewReceptionistById()">
+                <div class="form-group">
+                  <label>Receptionist Id :</label>
+                  <input type="text" class="form-control" formControlName="receptionistId">
+                  </div>
+              <br>
+                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; 
+              
+                    <input  type="submit" value="Search Receptionist" class="btn btn-primary" [disabled]="receptionistForm.invalid">
+              
+              
+              </form>
+              </div>
+              
+          
+              
+<div *ngIf="showid">
+    <h2 align="center"> Receptionist Details</h2>
+ 
+        <div class="reglist">
+            <div>
+                <table class="table table-striped" >
+                  <thead>
+                    <tr>
+                   
+                        <th>Receptionist Id</th>
+                        <th>Receptionist Name</th>
+                      
+            
+                        <th>Receptionist Phone Number</th>
+                        
+                        <th>Receptionist Email</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  
+                    <tr *ngFor="let r of receptionists">
+                        <td>
+                           {{r.receptionistId}}
+                         </td>
+                         <td>
+                             {{r.receptionistName}}
+                         </td>
+                     
+                         <td>
+                             {{r.receptionistPhoneNumber}}
+                         </td>
+                         <td>
+                             {{r.receptionistEmail}}
+                         </td>
+                      
+                       </tr>
+                  </tbody>
+                </table>
+              </div>
+              </div>
+              <br>
+              <button  class="btn btn-primary" >Back</button>
+            </div>
+            
+<app-footer></app-footer>
