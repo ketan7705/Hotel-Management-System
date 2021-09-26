@@ -1,6 +1,6 @@
 # Hotel-Management-System
 ## Result (Home Page) :
-![](https://github.com/ketan7705/Hotel-Management-System/blob/main/Frontend/HMS_angular_admin/src/assets/Home.jpg)
+![](https://github.com/PavanSaiSheshetti/HotelManagementSystem_Angular/blob/master/src/assets/img/image.png)
 ## Note :
   This project is only spring project and please find related angular project [here](https://github.com/PavanSaiSheshetti/HMS_angular_admin). You will find complete 
   description of running project in Installation and Run Section
