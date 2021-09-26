@@ -1,6 +1,6 @@
 # Hotel-Management-System
 ## Result (Home Page) :
-![](https://github.com/Na-veed/Patient-OnBoarding-Angular/blob/master/src/assets/home.JPG)
+![](https://github.com/ketan7705/Hotel-Management-System/blob/main/Frontend/HMS_angular_admin/src/assets/Home.jpg)
 ## Note :
   This project is only spring project and please find related angular project [here](https://github.com/PavanSaiSheshetti/HMS_angular_admin). You will find complete 
   description of running project in Installation and Run Section
